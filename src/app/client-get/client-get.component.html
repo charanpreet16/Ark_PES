@@ -1,0 +1,27 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Client List</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Client Name</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let client of clients | async">
+            <td>{{client.clientName}}</td>
+            <td>{{client.clientDescription}}</td>
+            <td>
+                <button (click)="clientDetails(client.clientId)" class="btn btn-info" style="margin-left: 10px">Investors</button> 
+            </td>
+            <td>
+                <button (click)="clientDetails(client.clientId)" class="btn btn-info" style="margin-left: 10px">Details</button> 
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
